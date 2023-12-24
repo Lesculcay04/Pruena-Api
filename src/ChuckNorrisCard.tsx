@@ -8,6 +8,7 @@ const ChuckNorrisCard: React.FC = () => {
     const [loading, setLoading] = useState(true);
   
     useEffect(() => {
+        //api de chistes
       const fetchChuckNorrisJoke = async () => {
         try {
           const response = await axios.get('https://api.chucknorris.io/jokes/random');
@@ -16,7 +17,7 @@ const ChuckNorrisCard: React.FC = () => {
           console.error('Error fetching Chuck Norris joke:', error);
         }
       };
-  
+      // api de costeles 
       const fetchCocktail = async () => {
         try {
           const cocktailResponse = await axios.get('https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita');
@@ -26,7 +27,7 @@ const ChuckNorrisCard: React.FC = () => {
           console.error('Error fetching cocktail:', error);
         }
       };
-  
+      
       fetchChuckNorrisJoke();
       fetchCocktail();
     }, []);
